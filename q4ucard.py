@@ -317,6 +317,7 @@ class PrintObserver(CardObserver):
       card.connection = card.createConnection()
       stat = card.connection.connect()
       print(stat)
+      sleep(.5)
       # card.connection.addObserver(self.observer)
       response, sw1, sw2 = card.connection.transmit( self.apdu )
       resultlist = list();
@@ -343,6 +344,7 @@ class PrintObserver(CardObserver):
                     result = result + tis620encoding[i]
                 resultlist.append(result)
       except CardConnectionException as e:
+        card.connection.disconnect()
         print(e)
       if len(resultlist) > 0:
         resultdict = {
