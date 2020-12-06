@@ -1,6 +1,6 @@
 // naphattharawat@gmail.com
 const fse = require('fs-extra');
-const { Reader } = require('@tanjaae/thaismartcardreader')
+const { Reader } = require('thaismartcardreader.js');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const myReader = new Reader()
 let kioskId;
